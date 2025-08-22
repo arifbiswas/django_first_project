@@ -13,11 +13,14 @@
 {% block maincontent %}
 <body class="bg-gray-50 text-black font-serif leading-normal tracking-normal">
      <nav class="text-white bg-amber-600 px-4 flex flex-row gap-3  items-center w-[100vw] h-12">
-        <a class="hover:text-blue-800 hover:text-2xl transition-all duration-300 hover:underline" href="">Home</a>
-        <a class="hover:text-blue-800 hover:text-2xl transition-all duration-300 hover:underline" href="about">About</a>
-        <a class="hover:text-blue-800 hover:text-2xl transition-all duration-300 hover:underline" href="contact">Contact</a>
+        <a class="hover:text-blue-800 hover:text-2xl transition-all duration-300 hover:underline btn-active" href="/">Home</a>
+        <a class="hover:text-blue-800 hover:text-2xl transition-all duration-300 hover:underline btn-active" href="/testapp">Test App</a>
+        <a class="hover:text-blue-800 hover:text-2xl transition-all duration-300 hover:underline btn-active" href="/testapp/contact">Test Contact</a>
+        <a class="hover:text-blue-800 hover:text-2xl transition-all duration-300 hover:underline" href="/about">About</a>
+        <a class="hover:text-blue-800 hover:text-2xl transition-all duration-300 hover:underline" href="/contact">Contact</a>
+        <a class="hover:text-blue-800 hover:text-2xl transition-all duration-300 hover:underline" href="/admin">Admin</a>
      </nav>
      {% block content %}{% endblock %}
     </body>
-    {% endblock maincontent %}
+    {% endblock  %}
 </html>
