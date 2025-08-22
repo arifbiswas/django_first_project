@@ -39,9 +39,21 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "testapp"
+    "testapp",
+      'tailwind',
+  'theme'
+    # "django_browser_reload"
 ]
 
+if DEBUG:
+    # Add django_browser_reload only in DEBUG mode
+    INSTALLED_APPS += ['django_browser_reload']
+
+TAILWIND_APP_NAME = "theme"
+INTERNAL_IPS =["127.0.0.1"]
+NPM_BIN_PATH = "C:/Program Files/nodejs/npm.cmd"
+
+# NPM_BIN_PATH = "C:\Users\Arif biswas\.npmrc"
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -50,7 +62,14 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    #  "django_browser_reload.middleware.BrowserReloadMiddleware",
 ]
+
+if DEBUG:
+    # Add django_browser_reload middleware only in DEBUG mode
+    MIDDLEWARE += [
+        "django_browser_reload.middleware.BrowserReloadMiddleware",
+    ]
 
 ROOT_URLCONF = 'firstdjango.urls'
 
